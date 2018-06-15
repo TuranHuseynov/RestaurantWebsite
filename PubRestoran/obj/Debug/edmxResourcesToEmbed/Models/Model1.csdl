@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PubRestoranModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="category_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Yemeys" Relationship="Self.FK_Yemey_Category" FromRole="Category" ToRole="Yemey" />
+  </EntityType>
+  <EntityType Name="Olke">
+    <Key>
+      <PropertyRef Name="olke_id" />
+    </Key>
+    <Property Name="olke_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="olke_ad" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Yemeys" Relationship="Self.FK_Yemey_Olke" FromRole="Olke" ToRole="Yemey" />
+  </EntityType>
+  <EntityType Name="Yemey">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="olke_id" Type="Int32" />
+    <Property Name="price" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Yemey_Category" FromRole="Yemey" ToRole="Category" />
+    <NavigationProperty Name="Olke" Relationship="Self.FK_Yemey_Olke" FromRole="Yemey" ToRole="Olke" />
+    <Property Name="yemek_adi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Yemey_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Yemey" Type="Self.Yemey" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="category_id" />
+      </Principal>
+      <Dependent Role="Yemey">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yemey_Olke">
+    <End Role="Olke" Type="Self.Olke" Multiplicity="0..1" />
+    <End Role="Yemey" Type="Self.Yemey" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Olke">
+        <PropertyRef Name="olke_id" />
+      </Principal>
+      <Dependent Role="Yemey">
+        <PropertyRef Name="olke_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PubRestoranEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Olkes" EntityType="Self.Olke" />
+    <EntitySet Name="Yemeys" EntityType="Self.Yemey" />
+    <AssociationSet Name="FK_Yemey_Category" Association="Self.FK_Yemey_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Yemey" EntitySet="Yemeys" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yemey_Olke" Association="Self.FK_Yemey_Olke">
+      <End Role="Olke" EntitySet="Olkes" />
+      <End Role="Yemey" EntitySet="Yemeys" />
+    </AssociationSet>
+    <EntitySet Name="Blogs" EntityType="PubRestoranModel.Blog" />
+    <EntitySet Name="AboutUs" EntityType="PubRestoranModel.AboutU" />
+    <EntitySet Name="Addresses" EntityType="PubRestoranModel.Address" />
+    <EntitySet Name="Contacts" EntityType="PubRestoranModel.Contact" />
+    <EntitySet Name="Galleries" EntityType="PubRestoranModel.Gallery" />
+    <EntitySet Name="Menu_Type" EntityType="PubRestoranModel.Menu_Type" />
+    <EntitySet Name="Offers" EntityType="PubRestoranModel.Offer" />
+    <EntitySet Name="Posts" EntityType="PubRestoranModel.Post" />
+    <EntitySet Name="Services" EntityType="PubRestoranModel.Service" />
+    <EntitySet Name="Sliders" EntityType="PubRestoranModel.Slider" />
+    <EntitySet Name="Specials" EntityType="PubRestoranModel.Special" />
+    <EntitySet Name="Bookings" EntityType="PubRestoranModel.Booking" />
+  </EntityContainer>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="blog_id" />
+    </Key>
+    <Property Name="blog_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="blog_text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="blog_context" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AboutU">
+    <Key>
+      <PropertyRef Name="about_id" />
+    </Key>
+    <Property Name="about_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="about_header" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="about_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="address_id" />
+    </Key>
+    <Property Name="address_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="address_map" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="address_phone" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="address_time" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="address_facebook" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="address_instagram" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="address_twit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="contact_id" />
+    </Key>
+    <Property Name="contact_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="contact_user_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="contact__user_email" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="contact_user_phone" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="contact_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Gallery">
+    <Key>
+      <PropertyRef Name="gallery_id" />
+    </Key>
+    <Property Name="gallery_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gallery_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Menu_Type">
+    <Key>
+      <PropertyRef Name="menu_type_id" />
+    </Key>
+    <Property Name="menu_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menu_type_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="menu_type_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Offer">
+    <Key>
+      <PropertyRef Name="offer_id" />
+    </Key>
+    <Property Name="offer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="offer_img" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="offer_header" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="offer_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="offer_date" Type="DateTime" Precision="0" />
+    <Property Name="offer_insides" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="offer_about_insides" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="post_id" />
+    </Key>
+    <Property Name="post_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="post_date" Type="DateTime" Precision="0" />
+    <Property Name="post_insides" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="post_header" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="post_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="post_img" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="post_about_inside" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="service_id" />
+    </Key>
+    <Property Name="service_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="service_icon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="service_header" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="service_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="slide_id" />
+    </Key>
+    <Property Name="slide_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="slide_header" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="slide_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="slide_back_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Special">
+    <Key>
+      <PropertyRef Name="special_id" />
+    </Key>
+    <Property Name="special_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="special_percent" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="special_header" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="special_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="special_back_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="booking_id" />
+    </Key>
+    <Property Name="booking_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="booking_date" Type="DateTime" Precision="3" />
+    <Property Name="booking_party_size" Type="Int32" />
+    <Property Name="booking_ex_requirements" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="booking_user_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="booking_user_phone" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="booking_user_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

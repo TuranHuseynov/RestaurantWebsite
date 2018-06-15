@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PubRestoranModelStoreContainer" CdmEntityContainer="PubRestoranEntities">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="PubRestoranModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Olkes">
+      <EntityTypeMapping TypeName="PubRestoranModel.Olke">
+        <MappingFragment StoreEntitySet="Olke">
+          <ScalarProperty Name="olke_id" ColumnName="olke_id" />
+          <ScalarProperty Name="olke_ad" ColumnName="olke_ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yemeys">
+      <EntityTypeMapping TypeName="PubRestoranModel.Yemey">
+        <MappingFragment StoreEntitySet="Yemey">
+          <ScalarProperty Name="yemek_adi" ColumnName="yemek_adi" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="olke_id" ColumnName="olke_id" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blogs">
+      <EntityTypeMapping TypeName="PubRestoranModel.Blog">
+        <MappingFragment StoreEntitySet="Blog">
+          <ScalarProperty Name="blog_context" ColumnName="blog_context" />
+          <ScalarProperty Name="blog_text" ColumnName="blog_text" />
+          <ScalarProperty Name="blog_id" ColumnName="blog_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AboutUs">
+      <EntityTypeMapping TypeName="PubRestoranModel.AboutU">
+        <MappingFragment StoreEntitySet="AboutUs">
+          <ScalarProperty Name="about_text" ColumnName="about_text" />
+          <ScalarProperty Name="about_header" ColumnName="about_header" />
+          <ScalarProperty Name="about_id" ColumnName="about_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="PubRestoranModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="address_twit" ColumnName="address_twit" />
+          <ScalarProperty Name="address_instagram" ColumnName="address_instagram" />
+          <ScalarProperty Name="address_facebook" ColumnName="address_facebook" />
+          <ScalarProperty Name="address_time" ColumnName="address_time" />
+          <ScalarProperty Name="address_phone" ColumnName="address_phone" />
+          <ScalarProperty Name="address_map" ColumnName="address_map" />
+          <ScalarProperty Name="address_id" ColumnName="address_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="PubRestoranModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="contact_text" ColumnName="contact_text" />
+          <ScalarProperty Name="contact_user_phone" ColumnName="contact_user_phone" />
+          <ScalarProperty Name="contact__user_email" ColumnName="contact__user_email" />
+          <ScalarProperty Name="contact_user_name" ColumnName="contact_user_name" />
+          <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Galleries">
+      <EntityTypeMapping TypeName="PubRestoranModel.Gallery">
+        <MappingFragment StoreEntitySet="Gallery">
+          <ScalarProperty Name="gallery_img" ColumnName="gallery_img" />
+          <ScalarProperty Name="gallery_id" ColumnName="gallery_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu_Type">
+      <EntityTypeMapping TypeName="PubRestoranModel.Menu_Type">
+        <MappingFragment StoreEntitySet="Menu_Type">
+          <ScalarProperty Name="menu_type_date" ColumnName="menu_type_date" />
+          <ScalarProperty Name="menu_type_name" ColumnName="menu_type_name" />
+          <ScalarProperty Name="menu_type_id" ColumnName="menu_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Offers">
+      <EntityTypeMapping TypeName="PubRestoranModel.Offer">
+        <MappingFragment StoreEntitySet="Offer">
+          <ScalarProperty Name="offer_about_insides" ColumnName="offer_about_insides" />
+          <ScalarProperty Name="offer_insides" ColumnName="offer_insides" />
+          <ScalarProperty Name="offer_date" ColumnName="offer_date" />
+          <ScalarProperty Name="offer_text" ColumnName="offer_text" />
+          <ScalarProperty Name="offer_header" ColumnName="offer_header" />
+          <ScalarProperty Name="offer_img" ColumnName="offer_img" />
+          <ScalarProperty Name="offer_id" ColumnName="offer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="PubRestoranModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="post_about_inside" ColumnName="post_about_inside" />
+          <ScalarProperty Name="post_img" ColumnName="post_img" />
+          <ScalarProperty Name="post_text" ColumnName="post_text" />
+          <ScalarProperty Name="post_header" ColumnName="post_header" />
+          <ScalarProperty Name="post_insides" ColumnName="post_insides" />
+          <ScalarProperty Name="post_date" ColumnName="post_date" />
+          <ScalarProperty Name="post_id" ColumnName="post_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="PubRestoranModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="service_text" ColumnName="service_text" />
+          <ScalarProperty Name="service_header" ColumnName="service_header" />
+          <ScalarProperty Name="service_icon" ColumnName="service_icon" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sliders">
+      <EntityTypeMapping TypeName="PubRestoranModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="slide_back_img" ColumnName="slide_back_img" />
+          <ScalarProperty Name="slide_text" ColumnName="slide_text" />
+          <ScalarProperty Name="slide_header" ColumnName="slide_header" />
+          <ScalarProperty Name="slide_id" ColumnName="slide_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specials">
+      <EntityTypeMapping TypeName="PubRestoranModel.Special">
+        <MappingFragment StoreEntitySet="Special">
+          <ScalarProperty Name="special_back_img" ColumnName="special_back_img" />
+          <ScalarProperty Name="special_text" ColumnName="special_text" />
+          <ScalarProperty Name="special_header" ColumnName="special_header" />
+          <ScalarProperty Name="special_percent" ColumnName="special_percent" />
+          <ScalarProperty Name="special_id" ColumnName="special_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="PubRestoranModel.Booking">
+        <MappingFragment StoreEntitySet="Booking">
+          <ScalarProperty Name="booking_user_email" ColumnName="booking_user_email" />
+          <ScalarProperty Name="booking_user_phone" ColumnName="booking_user_phone" />
+          <ScalarProperty Name="booking_user_name" ColumnName="booking_user_name" />
+          <ScalarProperty Name="booking_ex_requirements" ColumnName="booking_ex_requirements" />
+          <ScalarProperty Name="booking_party_size" ColumnName="booking_party_size" />
+          <ScalarProperty Name="booking_date" ColumnName="booking_date" />
+          <ScalarProperty Name="booking_id" ColumnName="booking_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

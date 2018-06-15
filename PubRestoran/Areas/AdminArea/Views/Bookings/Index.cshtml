@@ -1,0 +1,66 @@
+﻿@model IEnumerable<PubRestoran.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_user_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_user_phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_user_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_party_size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_ex_requirements)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_user_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_user_phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_user_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_party_size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_ex_requirements)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.booking_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.booking_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.booking_id })
+        </td>
+    </tr>
+}
+
+</table>

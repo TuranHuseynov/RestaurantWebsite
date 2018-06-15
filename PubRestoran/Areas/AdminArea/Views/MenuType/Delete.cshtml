@@ -1,0 +1,41 @@
+﻿@model PubRestoran.Models.Menu_Type
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Menu_Type</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.menu_type_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menu_type_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.menu_type_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menu_type_date)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

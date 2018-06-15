@@ -1,0 +1,21 @@
+#karusel{
+
+.owl-theme .owl-dots .owl-dot.active span,.owl-theme .owl-dots .owl-dot span, .owl-theme .owl-dots .owl-dot:hover span{
+	display: none;
+}
+
+@media (max-width: 965px){
+	.owl-theme .owl-dots .owl-dot.active span,.owl-theme .owl-dots .owl-dot span, .owl-theme .owl-dots .owl-dot:hover span{
+	background: darkslategrey;
+	display: block;
+}
+}
+
+h1{
+	font-family: 'Great Vibes', cursive;
+	color: #1ec0ff;
+	padding-bottom: 15px;
+}
+
+
+}

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PubRestoran.Models.Menu_Type>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.menu_type_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.menu_type_date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.menu_type_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.menu_type_date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.menu_type_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.menu_type_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.menu_type_id })
+        </td>
+    </tr>
+}
+
+</table>

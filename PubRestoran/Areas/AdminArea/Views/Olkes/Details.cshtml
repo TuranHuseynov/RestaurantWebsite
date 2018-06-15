@@ -1,0 +1,27 @@
+﻿@model PubRestoran.Models.Olke
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Olke</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.olke_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.olke_ad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.olke_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

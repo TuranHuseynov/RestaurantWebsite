@@ -1,0 +1,35 @@
+﻿@model PubRestoran.Models.AboutU
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AboutU</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.about_header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.about_header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.about_text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.about_text)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.about_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

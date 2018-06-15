@@ -1,0 +1,35 @@
+﻿@model PubRestoran.Models.Menu_Type
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Menu_Type</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.menu_type_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menu_type_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.menu_type_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menu_type_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.menu_type_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

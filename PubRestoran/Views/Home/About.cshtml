@@ -1,0 +1,42 @@
+﻿@model PubRestoran.ViewModel.Mymodel
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="about">
+    <div class="container">
+        @foreach (var item in Model._about)
+    {
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>@item.about_header</h1>
+                <hr>
+                <p>@item.about_text</p>
+                <footer class="text-right"> Chief :  Tomas Reader</footer>
+            </div>
+        </div>
+
+}
+    
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul>
+                    <li><h1>Opening <br>Hours</h1></li>
+                   @foreach (var item in Model._menutype)
+                   {
+                        <li>
+                        <h2>
+                            @item.menu_type_name<hr>
+                            @item.menu_type_date
+                        </h2>
+                    </li>
+
+                   }
+                </ul>
+                <hr>
+            </div>
+        </div>
+
+   
+    </div>
+</section>

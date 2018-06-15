@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PubRestoran.Models.Address>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.address_map)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address_phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address_facebook)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address_instagram)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address_twit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.address_map)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address_phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address_facebook)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address_instagram)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address_twit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.address_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.address_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.address_id })
+        </td>
+    </tr>
+}
+
+</table>

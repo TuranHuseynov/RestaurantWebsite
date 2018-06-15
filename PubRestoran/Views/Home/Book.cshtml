@@ -1,0 +1,62 @@
+﻿@model PubRestoran.ViewModel.Mymodel
+@{
+    ViewBag.Title = "Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #book{
+        background-color:crimson;
+        width:100%;
+
+    }
+    .mybtn {
+        padding: 3px 15px;
+        border: 1px solid white;
+        font-size: 16px;
+        margin: 12px;
+        border-radius: 40px;
+        background: blanchedalmond;
+        transition:all 0.3s linear;
+    }
+        .mybtn:hover {
+            background: #e891d1;
+        }
+</style>
+<section id="book">
+    <div class="container">
+
+        <h2 class="text-center">Daha ətraflı qeyd edin</h2>
+
+        <form action='~/Home/Book' method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control" name="booking_user_name" type="text" placeholder="Adınız *">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="booking_user_phone" type="text" placeholder="Telefon nömrəniz *">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="booking_user_email" type="email" placeholder="Email ünvanınız *">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control" name="booking_date" type="datetime" placeholder="Vaxt *">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="booking_party_size" type="text" placeholder="Qonaq sayı  *">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="booking_ex_requirements" placeholder="Əlavə qeydlər *"></textarea>
+                    </div>
+                    <div class="text-right">
+                        <button class="mybtn">Sifariş et</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</section>

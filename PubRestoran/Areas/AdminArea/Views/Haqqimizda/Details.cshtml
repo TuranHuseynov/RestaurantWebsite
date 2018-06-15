@@ -1,0 +1,67 @@
+﻿@model PubRestoran.Models.Address
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Address</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.address_map)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address_map)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address_phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address_phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address_facebook)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address_facebook)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address_instagram)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address_instagram)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address_twit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address_twit)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.address_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

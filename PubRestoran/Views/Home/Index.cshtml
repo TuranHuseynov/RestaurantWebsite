@@ -1,0 +1,215 @@
+﻿@model PubRestoran.ViewModel.Mymodel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<section id="slider">
+    <div class="container">
+        <div class="row">
+            <div class="slider">
+                @foreach (var item in Model._slider)
+                {
+                    <div class="slide">
+
+                    <p>@item.slide_text</p>
+                    <button class="booking" id="openModal">BOOK</button>
+                </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+<section id="menus">
+    <div class="col-md-4 ">
+        <div class="menusitem text-center">
+            <h1>Welcome</h1>
+            <p>Bu bölmədə siz öz sifarişinizi tez və rahat bir şəkildə edə bilərsiniz</p>
+
+            <p style="font-family: 'Great Vibes', cursive;
+    color: #ecf2f5; font-size:17px; margin:0;">Menyular</p>
+            <div id="menulistitem">
+                @foreach (var item in Model._olke)
+        {
+            <a href="/Home/Blog/@item.olke_id">@item.olke_ad</a>
+
+}
+            </div>
+
+            <input type="text" name="booking_user_name" placeholder="  Adınız"><br>
+            <input type="datetime" name="booking_date" placeholder="  Tarix"><br>
+            <input type="text" name="booking_party_size" placeholder="  Qonaq sayı"><br>
+
+
+
+            <button><a href="~/Home/Book">Sifariş et</a></button>
+
+
+            @foreach (var item in Model._address)
+    {
+
+        <h2>Ünvan</h2>
+        <p>@item.address_map </p>
+        <p>@item.address_phone</p>
+        <div class="icons">
+            <a href="@item.address_facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            <a href="@item.address_instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="@item.address_twit"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+        </div>
+
+}
+
+
+
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</section>
+
+<div class="clearfix"></div>
+
+
+<section id="foodservice">
+
+    <div class="container">
+        <h1 class="text-center">Our Service</h1>
+
+
+
+        <div class="row">
+
+
+            @foreach (var item in Model._service)
+    {
+            <div class="col-md-4">
+                <div class="items text-center">
+                    <i class="@item.service_icon" aria-hidden="true"></i>
+                    <h2 class="text-center">@item.service_header</h2>
+                    <p>@item.service_text</p>
+                </div>
+            </div>
+
+          }
+      
+
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<section id="service">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model._offer)
+            {
+                    <div class="col-md-6">
+
+                <img src="~/Uploads/@item.offer_img" style="width: 100%; border:1px solid #ccc; border-radius: 10px;">
+            </div>
+            <div class="col-md-6">
+                <div class="item">
+                    <p>@item.offer_text</p>
+                    <p>@item.offer_date</p>
+                     <a href="/Home/Post/@item.offer_id"> read more..</a>
+                </div>
+
+            </div>
+
+            }
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<div class="clearfix"></div>
+
+
+<section id="karusel">
+    <div class="container">
+      
+            <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">My Favorite Fruits</h1>
+            </div>
+        </div>
+        <div class="owl-carousel owl-theme">
+         
+  @foreach (var item in Model._gallery)
+  {
+      
+
+                   <div class="item">
+                <img src="~/Uploads/@item.gallery_img">
+                     </div>
+
+  }
+
+        </div>
+    </div>
+</section>
+
+<div class="clearfix"></div>
+<section id="specialtoday" style="background: url(../Uploads/@Model._special[0].special_back_img) center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @foreach (var item in Model._special)
+                {
+                    <div class="item">
+                    <h1>@item.special_header</h1>
+                    <div class="ring">
+                        @item.special_percent%
+                        <span><img src="http://www.rosavita.si/wp-content/uploads/2018/02/pi%C5%A1kot.png" style="vertical-align: middle;
+    width: 75%;
+    position: absolute;" /></span>
+
+                    </div>
+
+                    <p>@item.special_text</p>
+
+                </div>
+                }
+                
+
+            </div>
+        </div>
+    </div>
+</section>
+<section id="service">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model._offer)
+            {
+           <div class="col-md-6">
+
+                <div class="item">
+
+                    <p>@item.offer_text.</p>
+                    <p>@item.offer_date</p>
+                    <a href="/Home/Post/@item.offer_id"> read more..</a>
+                </div>
+
+            </div>
+           <div class="col-md-6">
+
+
+               <img src="~/Uploads/@item.offer_img" style="width: 100%; border:1px solid #ccc; border-radius: 10px;">
+
+           </div>
+
+            }
+
+        </div>
+    </div>
+</section>
+
+<div class="clearfix"></div>

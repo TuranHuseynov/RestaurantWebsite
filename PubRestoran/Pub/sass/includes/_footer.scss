@@ -1,0 +1,33 @@
+#footer{
+	padding: 20px auto;
+	background: #060c13;
+	
+	
+
+	.leftitem{
+		box-sizing: border-box;
+		color: #8a8c8e;
+		width: 76%;
+	}
+	.centeritem{
+		box-sizing: border-box;
+		color: #8a8c8e;
+		ul>li{
+			list-style: none;
+			line-height: 2;
+		}
+	}
+	.rightitem{
+		box-sizing: border-box;
+		color: #8a8c8e;
+	}
+
+	@media (max-width: 500px){
+		.rightitem{
+			    position: absolute;
+    			left: 289px;
+    			bottom: 33px;
+			
+		}
+	}
+}

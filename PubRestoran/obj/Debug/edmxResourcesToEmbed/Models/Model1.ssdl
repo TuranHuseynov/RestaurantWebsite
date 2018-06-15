@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PubRestoranModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AboutUs">
+    <Key>
+      <PropertyRef Name="about_id" />
+    </Key>
+    <Property Name="about_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="about_header" Type="nvarchar" MaxLength="500" />
+    <Property Name="about_text" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="address_id" />
+    </Key>
+    <Property Name="address_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="address_map" Type="nvarchar" MaxLength="300" />
+    <Property Name="address_phone" Type="nvarchar" MaxLength="300" />
+    <Property Name="address_time" Type="nvarchar" MaxLength="30" />
+    <Property Name="address_facebook" Type="nvarchar(max)" />
+    <Property Name="address_instagram" Type="nvarchar(max)" />
+    <Property Name="address_twit" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="blog_id" />
+    </Key>
+    <Property Name="blog_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="blog_text" Type="nvarchar" MaxLength="500" />
+    <Property Name="blog_context" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="booking_id" />
+    </Key>
+    <Property Name="booking_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="booking_date" Type="datetime" />
+    <Property Name="booking_party_size" Type="int" />
+    <Property Name="booking_ex_requirements" Type="nvarchar(max)" />
+    <Property Name="booking_user_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="booking_user_phone" Type="nvarchar" MaxLength="500" />
+    <Property Name="booking_user_email" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="category_name" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="contact_id" />
+    </Key>
+    <Property Name="contact_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="contact_user_name" Type="nvarchar" MaxLength="200" />
+    <Property Name="contact__user_email" Type="nvarchar" MaxLength="400" />
+    <Property Name="contact_user_phone" Type="nvarchar" MaxLength="60" />
+    <Property Name="contact_text" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Gallery">
+    <Key>
+      <PropertyRef Name="gallery_id" />
+    </Key>
+    <Property Name="gallery_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gallery_img" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Menu_Type">
+    <Key>
+      <PropertyRef Name="menu_type_id" />
+    </Key>
+    <Property Name="menu_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="menu_type_name" Type="nvarchar" MaxLength="200" />
+    <Property Name="menu_type_date" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Offer">
+    <Key>
+      <PropertyRef Name="offer_id" />
+    </Key>
+    <Property Name="offer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="offer_img" Type="nvarchar" MaxLength="500" />
+    <Property Name="offer_header" Type="nvarchar" MaxLength="300" />
+    <Property Name="offer_text" Type="nvarchar(max)" />
+    <Property Name="offer_date" Type="date" />
+    <Property Name="offer_insides" Type="nvarchar(max)" />
+    <Property Name="offer_about_insides" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Olke">
+    <Key>
+      <PropertyRef Name="olke_id" />
+    </Key>
+    <Property Name="olke_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="olke_ad" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="post_id" />
+    </Key>
+    <Property Name="post_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="post_date" Type="date" />
+    <Property Name="post_insides" Type="nvarchar(max)" />
+    <Property Name="post_header" Type="nvarchar" MaxLength="300" />
+    <Property Name="post_text" Type="nvarchar(max)" />
+    <Property Name="post_img" Type="nvarchar" MaxLength="500" />
+    <Property Name="post_about_inside" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="service_id" />
+    </Key>
+    <Property Name="service_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="service_icon" Type="nvarchar" MaxLength="100" />
+    <Property Name="service_header" Type="nvarchar" MaxLength="500" />
+    <Property Name="service_text" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="slide_id" />
+    </Key>
+    <Property Name="slide_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="slide_header" Type="nvarchar" MaxLength="200" />
+    <Property Name="slide_text" Type="nvarchar(max)" />
+    <Property Name="slide_back_img" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Special">
+    <Key>
+      <PropertyRef Name="special_id" />
+    </Key>
+    <Property Name="special_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="special_percent" Type="nvarchar" MaxLength="20" />
+    <Property Name="special_header" Type="nvarchar" MaxLength="300" />
+    <Property Name="special_text" Type="nvarchar(max)" />
+    <Property Name="special_back_img" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Yemey">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="olke_id" Type="int" />
+    <Property Name="price" Type="nvarchar" MaxLength="600" />
+    <Property Name="yemek_adi" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_Yemey_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Yemey" Type="Self.Yemey" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="category_id" />
+      </Principal>
+      <Dependent Role="Yemey">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yemey_Olke">
+    <End Role="Olke" Type="Self.Olke" Multiplicity="0..1" />
+    <End Role="Yemey" Type="Self.Yemey" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Olke">
+        <PropertyRef Name="olke_id" />
+      </Principal>
+      <Dependent Role="Yemey">
+        <PropertyRef Name="olke_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PubRestoranModelStoreContainer">
+    <EntitySet Name="AboutUs" EntityType="Self.AboutUs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gallery" EntityType="Self.Gallery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu_Type" EntityType="Self.Menu_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Offer" EntityType="Self.Offer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Olke" EntityType="Self.Olke" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Special" EntityType="Self.Special" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yemey" EntityType="Self.Yemey" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Yemey_Category" Association="Self.FK_Yemey_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Yemey" EntitySet="Yemey" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yemey_Olke" Association="Self.FK_Yemey_Olke">
+      <End Role="Olke" EntitySet="Olke" />
+      <End Role="Yemey" EntitySet="Yemey" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

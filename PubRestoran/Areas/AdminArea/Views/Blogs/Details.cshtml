@@ -1,0 +1,35 @@
+﻿@model PubRestoran.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.blog_text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.blog_text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.blog_context)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.blog_context)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.blog_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

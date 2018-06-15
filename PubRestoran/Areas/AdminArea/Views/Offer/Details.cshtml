@@ -1,0 +1,67 @@
+﻿@model PubRestoran.Models.Offer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Offer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.offer_img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offer_img)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offer_header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offer_header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offer_text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offer_text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offer_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offer_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offer_insides)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offer_insides)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offer_about_insides)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offer_about_insides)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.offer_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

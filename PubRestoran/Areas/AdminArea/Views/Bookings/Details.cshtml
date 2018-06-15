@@ -1,0 +1,67 @@
+﻿@model PubRestoran.Models.Booking
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.booking_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.booking_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.booking_party_size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.booking_party_size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.booking_ex_requirements)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.booking_ex_requirements)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.booking_user_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.booking_user_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.booking_user_phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.booking_user_phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.booking_user_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.booking_user_email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.booking_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

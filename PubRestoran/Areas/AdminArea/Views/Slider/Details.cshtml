@@ -1,0 +1,43 @@
+﻿@model PubRestoran.Models.Slider
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Slider</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.slide_header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.slide_header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.slide_text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.slide_text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.slide_back_img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.slide_back_img)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.slide_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

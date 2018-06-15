@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PubRestoran.Models.Offer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.offer_img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.offer_header)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.offer_text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.offer_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.offer_insides)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.offer_about_insides)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+           <img src="~/Uploads/@item.offer_img" style="width:100px; height:100px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offer_header)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offer_text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offer_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offer_insides)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offer_about_insides)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.offer_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.offer_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.offer_id })
+        </td>
+    </tr>
+}
+
+</table>

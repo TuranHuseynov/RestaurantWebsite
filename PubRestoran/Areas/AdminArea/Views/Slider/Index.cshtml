@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PubRestoran.Models.Slider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.slide_header)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.slide_text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.slide_back_img)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.slide_header)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.slide_text)
+        </td>
+        <td>
+        <img src="~/Uploads/@item.slide_back_img" style="width:100px; height:100px;" />    
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.slide_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.slide_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.slide_id })
+        </td>
+    </tr>
+}
+
+</table>

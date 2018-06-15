@@ -1,0 +1,51 @@
+﻿@model PubRestoran.Models.Special
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Special</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.special_percent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.special_percent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.special_header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.special_header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.special_text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.special_text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.special_back_img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.special_back_img)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.special_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

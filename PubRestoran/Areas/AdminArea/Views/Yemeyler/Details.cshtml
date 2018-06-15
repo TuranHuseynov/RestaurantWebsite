@@ -1,0 +1,51 @@
+﻿@model PubRestoran.Models.Yemey
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Yemey</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yemek_adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yemek_adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.category_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.category_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Olke.olke_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Olke.olke_ad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,82 @@
+﻿@model PubRestoran.ViewModel.Mymodel
+@{
+    ViewBag.Title = "Post";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="blog">
+
+    @foreach (var item in Model._offer)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-lg-7">
+                    <h1 class="mt-4">@item.offer_header</h1>
+                    <p>by <a href="#">Start Bootstrap</a></p>
+
+                    <hr>
+                    <p>@item.offer_date</p>
+
+                    <hr>
+
+                    <!-- Preview Image -->
+                    <img src="~/Uploads/@item.offer_img">
+                    <h2 class="text-success">Lorem Ipsum</h2>
+                </div>
+                <div class="col-md-5 col-lg-5">
+                    <h1>Lorem ipsum</h1>
+                    <h2>Icindekiler</h2>
+                    <div class="inside text-center">
+                       @foreach (var item2 in Model._offer)
+                       {
+                           <p>@item2.offer_insides<br /></p>
+                       }
+
+                    </div>
+                    <p style="padding: 20px 2px;">@item.offer_about_insides</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="texts">
+                        <blockquote>
+                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 	posuere erat a ante.</p>
+                            <footer>
+                                Someone famous in
+                                <cite>Source Title</cite>
+                            </footer>
+                        </blockquote>
+
+                        <p>@item.offer_text</p>
+                    </div>
+                    <h5>Leave a Comment:</h5>
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-md-5">
+                    <div class="comments ">
+                        <h3>User Name</h3>
+                        <p class="text-center">User comment ...</p>
+                        <hr>
+                        <h3>User Name</h3>
+                        <p class="text-center">User comment ...</p>
+                        <hr>
+                        <h3>User Name</h3>
+                        <p class="text-center">User comment ...</p>
+                        <hr>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</section>
+
+<div class="clearfix"></div>

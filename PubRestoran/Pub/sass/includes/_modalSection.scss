@@ -1,0 +1,71 @@
+#modalSection{
+
+@media (min-width: 751px){
+	display: none;
+}
+input{
+	font-size: 17px;
+    margin-bottom: 6px;
+    border-radius: 20px;
+    background: lavender;
+}
+.btnbook{
+	    font-size: 17px;
+    padding: 2px 33px;
+    border-radius: 24px;
+    background: gainsboro;
+}
+.modal{
+	display: none;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.5);
+
+}
+.modalContent{
+	background: #fff;
+	margin:17% auto;
+	width: 60%;
+	box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+	animation-name: modalll;
+	animation-duration: 1s;
+}
+.modalHeader{
+	background: linear-gradient(gray,#ccc,#395f93);
+	color: black;
+	padding: 7px;
+}
+.modalHeader h2{
+margin-top: 0;
+}
+.modalBody{
+	background: linear-gradient(gray,#ccc,gray);
+
+	padding: 10px 20px;
+}
+.modalFooter{
+	color: black;
+	background: linear-gradient(gray,#ccc,#395f93);
+		padding: 6px;
+}
+
+.btnspan{
+	color: red;
+	float: right;
+	font-size: 30px;
+} 
+.btnspan:hover{
+	color: darkblue;
+	text-decoration: none;
+	cursor: pointer;
+}
+@keyframes modalll{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+}

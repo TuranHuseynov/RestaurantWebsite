@@ -1,0 +1,27 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+
+}
+a{
+			color: gray;
+		text-decoration: none;
+}
+
+
+
+
+@import "includes/navbar";
+@import "includes/slider";
+@import "includes/modalSection";
+@import "includes/menus";
+@import "includes/foodservice";
+@import "includes/service";
+@import "includes/karusel";
+@import "includes/footer";
+@import "includes/blog";
+@import "includes/specialtoday";
+@import "includes/chines";
+@import "includes/contact";
+@import "includes/about";

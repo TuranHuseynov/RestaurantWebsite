@@ -1,0 +1,50 @@
+﻿@model PubRestoran.ViewModel.Mymodel
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section id="chines">
+    <div class="container">
+        <div class="row text-center">
+            @foreach (var item in Model._yemey)
+            {
+                <h1 class="text-center">@item.Category.category_name</h1>
+                <div class="col-md-6">
+
+
+                    <p>@item.yemek_adi ........................................ @item.price </p>
+
+                    <p>@item.yemek_adi ........................................ @item.price </p>
+
+                    <p>@item.yemek_adi ........................................ @item.price </p>
+
+
+
+                </div>
+                <div class="col-md-6">
+
+                    <p>@item.yemek_adi ........................................ @item.price </p>
+
+                    <p>@item.yemek_adi ........................................ @item.price </p>
+
+                    <p>@item.yemek_adi ........................................ @item.price </p>  
+
+
+                </div>
+
+            }
+        </div>
+
+
+
+    </div>
+</section>
+
+<div class="clearfix"></div>
+
+
+
+
+
